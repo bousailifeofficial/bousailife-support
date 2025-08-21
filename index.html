@@ -353,7 +353,7 @@
                 上記のよくある質問で解決しない場合は、以下のフォームからお問い合わせください。できる限り迅速にご対応いたします。
             </p>
             
-            <form id="contactForm" onsubmit="submitForm(event)">
+            <form action="https://formspree.io/f/xblkvvea" method="POST" id="contactForm" onsubmit="submitForm(event)">
                 <div class="form-group">
                     <label class="form-label" for="name">
                         お名前 <span class="required">*</span>
@@ -443,10 +443,12 @@
             }
         }
         
-        // フォーム送信処理
+        // フォーム送信処理（Formspree対応）
         function submitForm(event) {
             event.preventDefault();
             
+            const form = event.target;
+            const formData = new FormData(form);
             const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
@@ -459,20 +461,32 @@
             successMessage.classList.remove('show');
             errorMessage.classList.remove('show');
             
-            // 実際のフォーム送信（ここではサンプル）
-            // 本番では Formspree, Netlify Forms, EmailJS などのサービスを使用
-            setTimeout(() => {
-                // 成功シミュレーション
-                successMessage.classList.add('show');
-                document.getElementById('contactForm').reset();
-                
+            // Formspreeへの送信
+            fetch('https://formspree.io/f/xblkvvea', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // 送信成功
+                    successMessage.classList.add('show');
+                    form.reset();
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error('送信エラー');
+                }
+            }).catch(error => {
+                // 送信失敗
+                errorMessage.textContent = 'エラーが発生しました。再度お試しいただくか、直接メールでお問い合わせください。';
+                errorMessage.classList.add('show');
+                console.error('Error:', error);
+            }).finally(() => {
                 // ボタンを有効化
                 submitBtn.disabled = false;
                 submitBtn.textContent = '送信する';
-                
-                // ページトップにスクロール
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-            }, 2000);
+            });
         }
     </script>
 </body>
