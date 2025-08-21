@@ -13,87 +13,58 @@
         }
         
         body {
-            font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic', '游ゴシック', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic', '游ゴシック', sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #ffffff;
             min-height: 100vh;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         
         /* ヘッダー */
         .header {
-            background: linear-gradient(135deg, #0ea5e9, #10b981);
-            color: white;
             text-align: center;
-            padding: 40px 20px;
-            border-radius: 16px;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.3);
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
         }
         
         .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.125rem;
+            color: #4a5568;
+            font-weight: 400;
         }
         
-        .app-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 15px;
-        }
-        
-        .app-icon {
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-        }
-        
-        /* メインコンテンツ */
-        .content-section {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        /* セクション */
+        .section {
+            margin-bottom: 80px;
         }
         
         .section-title {
-            color: #1e293b;
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .section-icon {
+            color: #1a202c;
             font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.025em;
         }
         
         /* よくある質問 */
         .faq-item {
             border-bottom: 1px solid #e2e8f0;
-            padding: 20px 0;
+            padding: 24px 0;
         }
         
         .faq-item:last-child {
@@ -101,56 +72,59 @@
         }
         
         .faq-question {
-            font-weight: bold;
-            color: #0ea5e9;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.125rem;
+            margin-bottom: 12px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            transition: color 0.2s ease;
         }
         
         .faq-question:hover {
-            color: #0284c7;
+            color: #4299e1;
         }
         
         .faq-answer {
-            color: #475569;
+            color: #4a5568;
             line-height: 1.8;
-            padding-left: 25px;
+            display: none;
+            padding-top: 8px;
         }
         
         /* お問い合わせフォーム */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         
         .form-label {
             display: block;
-            font-weight: bold;
-            color: #374151;
+            font-weight: 500;
+            color: #2d3748;
             margin-bottom: 8px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .required {
-            color: #ef4444;
-            font-size: 0.9rem;
+            color: #e53e3e;
+            font-weight: normal;
         }
         
         .form-input, .form-select, .form-textarea {
             width: 100%;
             padding: 12px 16px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            background: #ffffff;
         }
         
         .form-input:focus, .form-select:focus, .form-textarea:focus {
             outline: none;
-            border-color: #0ea5e9;
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
         }
         
         .form-textarea {
@@ -159,52 +133,54 @@
         }
         
         .submit-button {
-            background: linear-gradient(135deg, #0ea5e9, #10b981);
+            background: #2d3748;
             color: white;
             border: none;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.2s ease;
             width: 100%;
         }
         
         .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+            background: #1a202c;
         }
         
         .submit-button:disabled {
             opacity: 0.6;
             cursor: not-allowed;
-            transform: none;
+            background: #a0aec0;
         }
         
-        /* メール連絡先 */
+        /* 連絡先情報 */
         .contact-info {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #10b981;
-            margin-top: 20px;
+            background: #f7fafc;
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #4299e1;
+            margin-top: 32px;
         }
         
         .contact-info h3 {
-            color: #059669;
-            margin-bottom: 10px;
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
         }
         
         .contact-info p {
-            color: #065f46;
+            color: #4a5568;
             margin-bottom: 8px;
+            line-height: 1.6;
         }
         
         .email-link {
-            color: #0ea5e9;
+            color: #4299e1;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
         }
         
         .email-link:hover {
@@ -214,61 +190,78 @@
         /* フッター */
         .footer {
             text-align: center;
-            padding: 30px 20px;
-            color: #64748b;
-            background: white;
-            border-radius: 16px;
-            margin-top: 40px;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.875rem;
         }
         
-        /* レスポンシブ */
-        @media (max-width: 640px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .app-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            .content-section {
-                padding: 20px;
-            }
-        }
-        
-        /* 送信完了メッセージ */
-        .success-message {
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            color: #065f46;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #10b981;
+        /* メッセージ */
+        .success-message, .error-message {
+            padding: 16px 20px;
+            border-radius: 6px;
             margin-top: 20px;
             display: none;
         }
         
-        .success-message.show {
-            display: block;
+        .success-message {
+            background: #f0fff4;
+            color: #2f855a;
+            border: 1px solid #9ae6b4;
         }
         
-        /* エラーメッセージ */
         .error-message {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            color: #dc2626;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #ef4444;
-            margin-top: 10px;
-            display: none;
+            background: #fed7d7;
+            color: #c53030;
+            border: 1px solid #feb2b2;
         }
         
-        .error-message.show {
+        .success-message.show, .error-message.show {
             display: block;
+        }
+        
+        .success-message h3 {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            .header {
+                margin-bottom: 40px;
+                padding-bottom: 24px;
+            }
+            
+            .header h1 {
+                font-size: 1.875rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                margin-bottom: 48px;
+            }
+            
+            .section-title {
+                font-size: 1.25rem;
+                margin-bottom: 24px;
+            }
+            
+            .faq-item {
+                padding: 20px 0;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -276,29 +269,20 @@
     <div class="container">
         <!-- ヘッダー -->
         <header class="header">
-            <div class="app-info">
-                <div class="app-icon">🛡️</div>
-                <div>
-                    <h1>防災ライフ サポート</h1>
-                    <p>災害時に家族を守る防災アプリ</p>
-                </div>
-            </div>
+            <h1>防災ライフ サポート</h1>
+            <p>災害時に家族を守る防災アプリ</p>
         </header>
         
         <!-- よくある質問 -->
-        <section class="content-section">
-            <h2 class="section-title">
-                <span class="section-icon">❓</span>
-                よくある質問
-            </h2>
+        <section class="section">
+            <h2 class="section-title">よくある質問</h2>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>▶</span>
-                    Q: 位置情報が取得できません
+                    位置情報が取得できません
                 </div>
-                <div class="faq-answer" style="display: none;">
-                    A: 以下の手順をお試しください：<br>
+                <div class="faq-answer">
+                    以下の手順をお試しください：<br><br>
                     1. 設定 > プライバシー > 位置情報 を開く<br>
                     2. 「防災ライフ」アプリを見つける<br>
                     3. 「アプリの使用中は許可」または「常に許可」を選択<br>
@@ -308,11 +292,10 @@
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>▶</span>
-                    Q: プッシュ通知が届きません
+                    プッシュ通知が届きません
                 </div>
-                <div class="faq-answer" style="display: none;">
-                    A: 通知設定をご確認ください：<br>
+                <div class="faq-answer">
+                    通知設定をご確認ください：<br><br>
                     1. 設定 > 通知 > 防災ライフ を開く<br>
                     2. 「通知を許可」をONにする<br>
                     3. 「バナー」「サウンド」「バッジ」をすべてONにする<br>
@@ -322,26 +305,24 @@
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>▶</span>
-                    Q: アプリが起動しません・クラッシュします
+                    アプリが起動しません・クラッシュします
                 </div>
-                <div class="faq-answer" style="display: none;">
-                    A: 以下の方法をお試しください：<br>
+                <div class="faq-answer">
+                    以下の方法をお試しください：<br><br>
                     1. アプリを完全に終了し、再度起動<br>
                     2. 端末を再起動<br>
                     3. App Storeでアプリの最新版が利用可能か確認<br>
-                    4. 端末の空き容量を確認（1GB以上推奨）<br>
+                    4. 端末の空き容量を確認（1GB以上推奨）<br><br>
                     それでも解決しない場合は下記フォームからお問い合わせください。
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>▶</span>
-                    Q: 避難所の情報が表示されません
+                    避難所の情報が表示されません
                 </div>
-                <div class="faq-answer" style="display: none;">
-                    A: 以下をご確認ください：<br>
+                <div class="faq-answer">
+                    以下をご確認ください：<br><br>
                     1. インターネット接続が安定しているか確認<br>
                     2. 位置情報の許可が有効になっているか確認<br>
                     3. GPS信号を受信できる場所（屋外など）で試す<br>
@@ -351,28 +332,24 @@
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>▶</span>
-                    Q: 家族との安否確認機能の使い方を教えてください
+                    家族との安否確認機能の使い方を教えてください
                 </div>
-                <div class="faq-answer" style="display: none;">
-                    A: 家族安否確認機能の使い方：<br>
+                <div class="faq-answer">
+                    家族安否確認機能の使い方：<br><br>
                     1. アプリ内で家族を招待・登録<br>
                     2. 緊急時は「無事です」ボタンをタップ<br>
                     3. 位置情報と安否状況が自動で家族に共有されます<br>
-                    4. 家族の安否状況はリアルタイムで確認可能<br>
+                    4. 家族の安否状況はリアルタイムで確認可能<br><br>
                     詳細な設定方法についてはアプリ内のヘルプをご確認ください。
                 </div>
             </div>
         </section>
         
         <!-- お問い合わせフォーム -->
-        <section class="content-section">
-            <h2 class="section-title">
-                <span class="section-icon">📧</span>
-                お問い合わせ
-            </h2>
+        <section class="section">
+            <h2 class="section-title">お問い合わせ</h2>
             
-            <p style="margin-bottom: 20px; color: #64748b;">
+            <p style="margin-bottom: 32px; color: #4a5568;">
                 上記のよくある質問で解決しない場合は、以下のフォームからお問い合わせください。できる限り迅速にご対応いたします。
             </p>
             
@@ -407,16 +384,16 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="device">
-                        使用機種（例：iPhone 15, iPad Air など）
+                        使用機種
                     </label>
-                    <input type="text" id="device" name="device" class="form-input" placeholder="iPhone 15">
+                    <input type="text" id="device" name="device" class="form-input" placeholder="例：iPhone 15, iPad Air">
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="os">
-                        OSバージョン（例：iOS 17.1, Android 14 など）
+                        OSバージョン
                     </label>
-                    <input type="text" id="os" name="os" class="form-input" placeholder="iOS 17.1">
+                    <input type="text" id="os" name="os" class="form-input" placeholder="例：iOS 17.1, Android 14">
                 </div>
                 
                 <div class="form-group">
@@ -434,24 +411,23 @@
                 
                 <div class="error-message" id="errorMessage"></div>
                 <div class="success-message" id="successMessage">
-                    <h3>✅ お問い合わせを受け付けました</h3>
+                    <h3>お問い合わせを受け付けました</h3>
                     <p>ご連絡いただきありがとうございます。内容を確認の上、2営業日以内にご返信いたします。緊急の場合は直接メールでお問い合わせください。</p>
                 </div>
             </form>
             
             <div class="contact-info">
-                <h3>📧 直接メールでのお問い合わせ</h3>
+                <h3>直接メールでのお問い合わせ</h3>
                 <p>緊急のお問い合わせやフォームが利用できない場合：</p>
                 <p><a href="mailto:bousailife.official@gmail.com" class="email-link">bousailife.official@gmail.com</a></p>
                 <p><strong>対応時間：</strong> 平日 9:00 - 18:00</p>
-                <p><small>※土日祝日は返信が遅れる場合がございます</small></p>
+                <p style="font-size: 0.875rem; color: #718096;">※土日祝日は返信が遅れる場合がございます</p>
             </div>
         </section>
         
         <!-- フッター -->
         <footer class="footer">
             <p>&copy; 2025 防災ライフ. All rights reserved.</p>
-            <p>災害時に家族を守る防災アプリ</p>
         </footer>
     </div>
     
@@ -459,14 +435,11 @@
         // FAQの開閉
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
-            const arrow = element.querySelector('span');
             
             if (answer.style.display === 'none' || answer.style.display === '') {
                 answer.style.display = 'block';
-                arrow.textContent = '▼';
             } else {
                 answer.style.display = 'none';
-                arrow.textContent = '▶';
             }
         }
         
@@ -501,34 +474,6 @@
                 successMessage.scrollIntoView({ behavior: 'smooth' });
             }, 2000);
         }
-        
-        // 実際のフォーム送信設定例（Formspreeを使用する場合）
-        /*
-        function submitForm(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const formData = new FormData(form);
-            
-            fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('successMessage').classList.add('show');
-                    form.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            }).catch(error => {
-                document.getElementById('errorMessage').textContent = 'エラーが発生しました。再度お試しください。';
-                document.getElementById('errorMessage').classList.add('show');
-            });
-        }
-        */
     </script>
 </body>
 </html>
